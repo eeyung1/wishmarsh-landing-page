@@ -30,10 +30,10 @@ export type IconKey =
   | "gift"
   | "sunburst"
   | "star"
-  | "calendar-plus"
-  | "share"
-  | "inbox"
-  | "sparkle";
+  | "calendar"
+  | "chain"
+  | "heart-bubble"
+  | "sparkles";
 
 /** UI model for a category card in the categories strip. */
 export interface Category {
@@ -76,25 +76,25 @@ const STEPS: Step[] = [
     stepNumber: 1,
     title: "Create Event",
     description: "Add your details and choose a theme.",
-    icon: "calendar-plus",
+    icon: "calendar",
   },
   {
     stepNumber: 2,
     title: "Share Link",
     description: "Send it to your friends and family.",
-    icon: "share",
+    icon: "chain",
   },
   {
     stepNumber: 3,
     title: "Collect Wishes",
     description: "Messages, gifts and goodwill.",
-    icon: "inbox",
+    icon: "heart-bubble",
   },
   {
     stepNumber: 4,
     title: "Celebrate",
     description: "Relive the moments forever.",
-    icon: "sparkle",
+    icon: "sparkles",
   },
 ];
 
@@ -143,24 +143,24 @@ const ICONS: Record<IconKey, string> = {
   star: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="m12 3.3 2.75 5.65 6.05.85-4.4 4.3 1.05 6.15L12 17.25l-5.45 3-1.05-6.15-4.4-4.3 6.05-.85z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
   </svg>`,
-  "calendar-plus": `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  calendar: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <rect x="3.5" y="5" width="17" height="15.5" rx="3.5" stroke="currentColor" stroke-width="1.7"/>
     <path d="M3.5 9.8h17M8 3.2v3.8M16 3.2v3.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-    <path d="M12 13v5.4M9.3 15.7h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M8 13h2M14 13h2M8 16.6h2M14 16.6h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
   </svg>`,
-  share: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <circle cx="18" cy="5.8" r="2.6" stroke="currentColor" stroke-width="1.7"/>
-    <circle cx="6" cy="12" r="2.6" stroke="currentColor" stroke-width="1.7"/>
-    <circle cx="18" cy="18.2" r="2.6" stroke="currentColor" stroke-width="1.7"/>
-    <path d="m8.3 10.8 7.4-3.8M8.3 13.2l7.4 3.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  chain: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.4 13.6a4.1 4.1 0 0 0 5.8 0l2.4-2.4a4.1 4.1 0 0 0-5.8-5.8l-1.4 1.4"/>
+      <path d="M13.6 10.4a4.1 4.1 0 0 0-5.8 0l-2.4 2.4a4.1 4.1 0 1 0 5.8 5.8l1.4-1.4"/>
+    </g>
   </svg>`,
-  inbox: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M3.4 13.4h4.1l1.4 2.7h6.2l1.4-2.7h4.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M3.4 13.4 6 5.7a2 2 0 0 1 1.9-1.4h8.2A2 2 0 0 1 18 5.7l2.6 7.7v4a2 2 0 0 1-2 2H5.4a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+  "heart-bubble": `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M20.5 11.4c0 3.8-3.8 6.9-8.5 6.9-.9 0-1.7-.1-2.5-.3L4.6 19.4l1.1-3.1a6.4 6.4 0 0 1-2.2-4.9C3.5 7.6 7.3 4.5 12 4.5s8.5 3.1 8.5 6.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M12 14.1s-2.7-1.7-2.7-3.5a1.45 1.45 0 0 1 2.7-.9 1.45 1.45 0 0 1 2.7.9c0 1.8-2.7 3.5-2.7 3.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
   </svg>`,
-  sparkle: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M10.4 3.4c1.5 5.1 3.4 7 8.5 8.6-5.1 1.5-7 3.4-8.5 8.6-1.5-5.1-3.4-7-8.5-8.6 5.1-1.5 7-3.4 8.5-8.6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-    <path d="M18.6 2.6v3M17.1 4.1h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  sparkles: `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M10.2 3.4c1.2 4.1 2.7 5.6 6.8 6.8-4.1 1.2-5.6 2.7-6.8 6.8-1.2-4.1-2.7-5.6-6.8-6.8 4.1-1.2 5.6-2.7 6.8-6.8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M17.6 13.2c.6 2.1 1.3 2.8 3.4 3.4-2.1.6-2.8 1.3-3.4 3.4-.6-2.1-1.3-2.8-3.4-3.4 2.1-.6 2.8-1.3 3.4-3.4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
   </svg>`,
 };
 
@@ -339,12 +339,10 @@ function renderSteps(container: HTMLElement, steps: Step[]): void {
       <li class="step" data-reveal style="--reveal-delay:${index * 90}ms">
         <span class="step__badge" aria-hidden="true">${step.stepNumber}</span>
         <div class="step__body">
-          <div class="step__head">
-            <span class="step__icon">${icon(step.icon)}</span>
-            <h3 class="step__title">
-              <span class="visually-hidden">Step ${step.stepNumber}: </span>${escapeHtml(step.title)}
-            </h3>
-          </div>
+          <span class="step__icon">${icon(step.icon)}</span>
+          <h3 class="step__title">
+            <span class="visually-hidden">Step ${step.stepNumber}: </span>${escapeHtml(step.title)}
+          </h3>
           <p class="step__desc">${escapeHtml(step.description)}</p>
         </div>
       </li>`,

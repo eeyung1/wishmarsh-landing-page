@@ -5,7 +5,7 @@ import { setTimeout as sleep } from "node:timers/promises";
 
 const URL = process.argv[2] ?? "http://localhost:4173/index.html";
 const WIDTH = Number(process.argv[3] ?? 820);
-const PORT = 9337;
+const PORT = 9400 + Math.floor(Math.random() * 500);
 const PROFILE = `/tmp/opencode/chrome-profile-${PORT}`;
 rmSync(PROFILE, { recursive: true, force: true });
 
@@ -25,8 +25,8 @@ const chrome = spawn(
 process.on("exit", () => chrome.kill());
 
 let target = null;
-for (let i = 0; i < 40 && !target; i += 1) {
-  await sleep(250);
+for (let i = 0; i < 120 && !target; i += 1) {
+  await sleep(500);
   try {
     const list = await (await fetch(`http://127.0.0.1:${PORT}/json/list`)).json();
     target = list.find((t) => t.type === "page");

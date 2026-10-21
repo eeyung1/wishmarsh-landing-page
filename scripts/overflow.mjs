@@ -8,7 +8,7 @@ import { setTimeout as sleep } from "node:timers/promises";
 const WIDTH = Number(process.argv[2] ?? 390);
 const HEIGHT = Number(process.argv[3] ?? 844);
 const URL = process.argv[4] ?? "http://localhost:4173/index.html";
-const PORT = 9333;
+const PORT = 9400 + Math.floor(Math.random() * 500);
 
 const chrome = spawn(
   "google-chrome",
@@ -28,8 +28,8 @@ const chrome = spawn(
 process.on("exit", () => chrome.kill());
 
 let target = null;
-for (let attempt = 0; attempt < 40 && !target; attempt += 1) {
-  await sleep(250);
+for (let attempt = 0; attempt < 120 && !target; attempt += 1) {
+  await sleep(500);
   try {
     const res = await fetch(`http://127.0.0.1:${PORT}/json/list`);
     const list = await res.json();

@@ -57,14 +57,17 @@ All tokens live at the top of `styles.css` under `:root`.
 
 | Token | Value | Usage |
 | :--- | :--- | :--- |
-| `--brand-dark-wine` | `#4A0515` | Hero background, active button text |
-| `--brand-wine-gradient` | `linear-gradient(135deg, #60081D 0%, #3B0310 100%)` | Header / hero backdrop |
-| `--brand-button-accent` | `#6F0A23` | Primary CTA, icon strokes |
-| `--brand-cream-bg` | `#FFF9FA` | Wish wall section background |
-| `--pure-white` | `#FFFFFF` | Cards, buttons |
+| `--bg-hero-start` / `--bg-hero-end` | `#4B0618` → `#380310` | Hero gradient stops |
+| `--bg-hero` | `linear-gradient(135deg, #4B0618 0%, #380310 100%)` | Header / hero backdrop |
+| `--bg-blush` | `#FFF7F9` | Wish wall card, pill tags |
+| `--bg-footer` | `#2E020C` | Footer |
+| `--accent-maroon` | `#6F0A23` | Primary CTA, icon strokes |
+| `--btn-white` / `--btn-white-ink` | `#FFFFFF` / `#4B0618` | White pill button |
+| `--backdrop-crimson` | `#5E091F` | Organic backdrop behind the subjects |
 | `--text-primary` | `#1F1F1F` | Headings |
 | `--text-muted` | `#666666` | Body copy |
 | `--border-subtle` | `#F1E4E7` | Card borders |
+| `--note-slate` | `#242424` | Dark chalk sticky note |
 
 * **Type** — `Plus Jakarta Sans` (UI) and `Caveat` (handwriting / sticky notes), with
   system fallbacks so nothing breaks when the webfont is unavailable.
@@ -77,19 +80,21 @@ All tokens live at the top of `styles.css` under `:root`.
 | Section | Element | Notes |
 | :--- | :--- | :--- |
 | A | `<nav>` | Brand mark (origami envelope + heart), links, pill CTA, mobile drawer |
-| B | `<header>` | Wine gradient hero, pill tag, display headline, masked photo on a wine blob |
-| C | `<section>` | Six event categories with stroke icons |
-| D | `<section>` | Blush wish-wall collage — tilted sticky notes, polaroids, floating hearts |
-| E | `<section>` | "How it works" — maroon circle backdrop, 4-step dotted timeline |
+| B | `<header>` | Wine gradient hero, pill tag, display headline, masked photo on a crimson blob |
+| C | `<section>` | Six event categories with stroke icons in a single row |
+| D | `<section>` | Blush card (`24px` radius, `48px` padding) with a tilted sticky-note collage |
+| E | `<section>` | "How it works" — crimson circle backdrop, 4-step horizontal timeline |
 | F | `<footer>` | Deep wine footer, links and social outlines |
 
 ### Image integration
 
-* `images/girl.jpg` and `images/guy.jpg` are masked with organic `border-radius` shapes
-  and layered over CSS wine backdrops (`::before`-style sibling elements) so they read as
-  cutouts whether the source is a raw photo or a transparent PNG.
+* `images/girl.jpg` and `images/guy.jpg` are clipped with **organic shapes** (an
+  irregular `border-radius` for the hero, a perfect circle for the steps section) so no
+  square photo border is ever visible, and they sit directly on the crimson
+  `--backdrop-crimson` organic shapes layered behind them.
 * White line-doodles (hearts, burst lines, sparkles, squiggles) are inline SVGs positioned
-  absolutely around each photo.
+  around each subject — the burst sits over the phone in the hero, the hearts float to the
+  right of her head, and the step-section burst radiates above his head.
 * Both images declare explicit `width`/`height` plus `object-fit: cover`, and the
   below-the-fold image uses `loading="lazy"` — so there is no Cumulative Layout Shift.
 
@@ -136,12 +141,12 @@ fall back to `MOCK_CATEGORIES` / `MOCK_WISHES`.
 
 | Breakpoint | Layout |
 | :--- | :--- |
-| ≥ 1081px | Side-by-side hero, 6-across categories, two-column collage & how-it-works |
-| 821–1080px | Categories wrap to 3 columns, split layouts retained |
+| ≥ 1081px | Side-by-side hero, 6-across categories, two-column collage & how-it-works, 4-step horizontal timeline |
+| 821–1080px | Categories wrap to 3 columns, steps become a 2×2 grid |
 | ≤ 960px | Single column — copy first, visual second |
 | ≤ 820px | Collapsible nav drawer |
-| ≤ 640px | 2-column categories, stacked buttons, compact collage |
-| ≤ 420px | Single-column categories |
+| ≤ 700px | Steps become a vertical dotted timeline |
+| ≤ 640px | 2-column categories, compact wish-wall card |
 
 ## ✅ Quality checks
 

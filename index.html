@@ -8,7 +8,7 @@
       name="description"
       content="Wishmarsh helps you collect wishes, messages and optional gifts for the people you care about — all in one beautiful, collage-style wish wall."
     />
-    <meta name="theme-color" content="#4A0515" />
+    <meta name="theme-color" content="#4B0618" />
     <meta name="color-scheme" content="light" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +19,7 @@
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A0515'/%3E%3Cpath d='M5 11l11-7 11 7v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 23s-4-2.6-4-5.2A2.3 2.3 0 0 1 16 16a2.3 2.3 0 0 1 4 1.8c0 2.6-4 5.2-4 5.2z' fill='%23fff'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234B0618'/%3E%3Cpath d='M5 11l11-7 11 7v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M16 23s-4-2.6-4-5.2A2.3 2.3 0 0 1 16 16a2.3 2.3 0 0 1 4 1.8c0 2.6-4 5.2-4 5.2z' fill='%23fff'/%3E%3C/svg%3E"
     />
 
     <link rel="stylesheet" href="styles.css" />
@@ -73,9 +73,7 @@
           <div class="nav__menu" id="nav-menu">
             <a class="nav__link" href="#how-it-works">How it works</a>
             <a class="nav__link" href="#login" data-auth="login">Login</a>
-            <a class="btn btn--light nav__cta" href="#signup" data-auth="register"
-              >Sign up</a
-            >
+            <a class="btn btn--white nav__cta" href="#signup" data-auth="register">Sign up</a>
           </div>
         </div>
       </nav>
@@ -105,18 +103,14 @@
             </p>
 
             <div class="hero__actions">
-              <a
-                class="btn btn--light btn--lg"
-                href="#signup"
-                data-create-event="hero"
+              <a class="btn btn--white btn--lg" href="#signup" data-create-event="hero"
                 >Create an event →</a
               >
-              <a class="btn btn--ghost btn--lg" href="#how-it-works">See how it works</a>
             </div>
           </div>
 
           <div class="hero__visual">
-            <!-- Wine backdrop card -->
+            <!-- Organic crimson backdrop, masked directly behind the subject -->
             <div class="hero__blob" aria-hidden="true"></div>
             <div class="hero__blob-soft" aria-hidden="true"></div>
 
@@ -130,8 +124,32 @@
               decoding="async"
             />
 
-            <!-- Hand drawn doodles -->
+            <!-- Hand drawn doodle accents -->
+            <svg class="doodle doodle--burst" viewBox="0 0 80 80" aria-hidden="true">
+              <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+                <path d="M40 6v15" />
+                <path d="M40 59v15" />
+                <path d="M6 40h15" />
+                <path d="M59 40h15" />
+                <path d="m15.6 15.6 10.6 10.6" />
+                <path d="m53.8 53.8 10.6 10.6" />
+                <path d="m64.4 15.6-10.6 10.6" />
+                <path d="m26.2 53.8-10.6 10.6" />
+              </g>
+            </svg>
+
             <svg class="doodle doodle--heart" viewBox="0 0 72 66" aria-hidden="true">
+              <path
+                d="M36 60C22 51 6 38 6 22.5 6 12.5 13 6 21.5 6c5.3 0 10.1 2.8 12.4 7 2.4-4.2 7.2-7 12.5-7C55 6 62 12.5 62 22.5 62 38 46 51 36 60z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <svg class="doodle doodle--heart doodle--heart-two" viewBox="0 0 72 66" aria-hidden="true">
               <path
                 d="M36 60C22 51 6 38 6 22.5 6 12.5 13 6 21.5 6c5.3 0 10.1 2.8 12.4 7 2.4-4.2 7.2-7 12.5-7C55 6 62 12.5 62 22.5 62 38 46 51 36 60z"
                 fill="none"
@@ -142,25 +160,12 @@
               />
             </svg>
 
-            <svg class="doodle doodle--burst" viewBox="0 0 80 80" aria-hidden="true">
-              <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none">
-                <path d="M40 6v13" />
-                <path d="M40 61v13" />
-                <path d="M6 40h13" />
-                <path d="M61 40h13" />
-                <path d="m15.6 15.6 9.2 9.2" />
-                <path d="m55.2 55.2 9.2 9.2" />
-                <path d="m64.4 15.6-9.2 9.2" />
-                <path d="m24.8 55.2-9.2 9.2" />
-              </g>
-            </svg>
-
             <svg class="doodle doodle--sparkle" viewBox="0 0 40 40" aria-hidden="true">
               <path
                 d="M20 3c2.2 8.9 6.1 12.8 15 15-8.9 2.2-12.8 6.1-15 15-2.2-8.9-6.1-12.8-15-15C13.9 15.8 17.8 11.9 20 3z"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.4"
+                stroke-width="2.6"
                 stroke-linejoin="round"
               />
             </svg>
@@ -170,40 +175,10 @@
                 d="M2 18c8-14 14 4 22-4s8 8 16 2 8 10 16 4 12 4 16-2"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.4"
+                stroke-width="2.6"
                 stroke-linecap="round"
               />
             </svg>
-
-            <!-- Floating stat chips -->
-            <div class="hero__chip hero__chip--wishes">
-              <span class="hero__chip-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 20s-7-4.6-7-9.4A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.6C19 15.4 12 20 12 20z"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span class="hero__chip-text"><strong>248</strong> wishes collected</span>
-            </div>
-
-            <div class="hero__chip hero__chip--naira">
-              <span class="hero__chip-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M6 4v16M18 4v16M6 12h12M12 6.5 9.5 10h5zM12 17.5 9.5 14h5z"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span class="hero__chip-text"><strong>₦120k</strong> in gifts</span>
-            </div>
           </div>
         </div>
       </section>
@@ -213,16 +188,8 @@
       <!-- =========================================================== -->
       <!-- EVENT CATEGORIES                                              -->
       <!-- =========================================================== -->
-      <section class="categories" aria-labelledby="categories-title">
+      <section class="categories" aria-label="Celebration categories">
         <div class="container">
-          <div class="section-head section-head--center">
-            <p class="tag tag--soft">Every occasion</p>
-            <h2 class="section-title" id="categories-title">Pick your moment</h2>
-            <p class="section-sub">
-              From milestone birthdays to quiet get-wells, there's a wish wall for it.
-            </p>
-          </div>
-
           <div class="categories__grid" data-categories></div>
           <noscript>
             <p class="noscript-note">
@@ -237,101 +204,78 @@
       <!-- VALUE PROPOSITION — WISH WALL COLLAGE                         -->
       <!-- =========================================================== -->
       <section class="wishwall" aria-labelledby="wishwall-title">
-        <div class="container wishwall__grid">
-          <div class="wishwall__visual">
-            <div class="collage" data-collage>
-              <div class="collage__wash" aria-hidden="true"></div>
-              <div class="collage__notes" data-notes></div>
-              <div class="collage__photos" data-photos></div>
+        <div class="container">
+          <div class="wishwall__card">
+            <div class="wishwall__grid">
+              <div class="wishwall__visual">
+                <div class="collage" data-collage>
+                  <div class="collage__wash" aria-hidden="true"></div>
+                  <div class="collage__notes" data-notes></div>
+                  <div class="collage__photos" data-photos></div>
 
-              <svg class="collage__heart collage__heart--one" viewBox="0 0 40 38" aria-hidden="true">
-                <path
-                  d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <svg class="collage__heart collage__heart--two" viewBox="0 0 40 38" aria-hidden="true">
-                <path
-                  d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <svg class="collage__heart collage__heart--three" viewBox="0 0 40 38" aria-hidden="true">
-                <path
-                  d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linejoin="round"
-                />
-              </svg>
+                  <svg class="collage__heart collage__heart--one" viewBox="0 0 40 38" aria-hidden="true">
+                    <path
+                      d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg class="collage__heart collage__heart--two" viewBox="0 0 40 38" aria-hidden="true">
+                    <path
+                      d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg class="collage__heart collage__heart--three" viewBox="0 0 40 38" aria-hidden="true">
+                    <path
+                      d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg class="collage__heart collage__heart--four" viewBox="0 0 40 38" aria-hidden="true">
+                    <path
+                      d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg class="collage__heart collage__heart--five" viewBox="0 0 40 38" aria-hidden="true">
+                    <path
+                      d="M20 34C10 27 3 20 3 13.2 3 7.6 7.2 4 11.8 4c2.9 0 5.6 1.5 7 3.9C20 5.5 22.6 4 25.6 4 30.2 4 34 7.6 34 13.2 34 20 27 27 20 34z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="wishwall__content">
+                <h2 class="section-title" id="wishwall-title">One link, a thousand goodwill.</h2>
+                <p class="section-text">
+                  Your guests can leave heartfelt messages and optional Naira funds, all in one
+                  beautiful, collage-style wish wall.
+                </p>
+
+                <a
+                  class="btn btn--maroon btn--lg"
+                  href="#signup"
+                  data-create-event="wishwall"
+                  >Create an event →</a
+                >
+              </div>
             </div>
-          </div>
-
-          <div class="wishwall__content">
-            <h2 class="section-title" id="wishwall-title">One link, a thousand goodwill.</h2>
-            <p class="section-text">
-              Your guests can leave heartfelt messages and optional Naira funds, all in one beautiful,
-              collage-style wish wall.
-            </p>
-
-            <ul class="wishwall__points">
-              <li>
-                <span class="wishwall__check" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="m5 10.4 3.2 3.2L15 6.8"
-                      stroke="currentColor"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                Messages, photos and doodles — no app download needed.
-              </li>
-              <li>
-                <span class="wishwall__check" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="m5 10.4 3.2 3.2L15 6.8"
-                      stroke="currentColor"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                Optional Naira gift funds collected in one place.
-              </li>
-              <li>
-                <span class="wishwall__check" aria-hidden="true">
-                  <svg viewBox="0 0 20 20" fill="none">
-                    <path
-                      d="m5 10.4 3.2 3.2L15 6.8"
-                      stroke="currentColor"
-                      stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                A living memory that grows with every new wish.
-              </li>
-            </ul>
-
-            <a
-              class="btn btn--wine btn--lg"
-              href="#signup"
-              data-create-event="wishwall"
-              >Create an event →</a
-            >
           </div>
         </div>
       </section>
@@ -355,28 +299,28 @@
               decoding="async"
             />
 
+            <svg class="how__doodle how__doodle--burst" viewBox="0 0 80 80" aria-hidden="true">
+              <g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+                <path d="M40 6v15" />
+                <path d="M40 59v15" />
+                <path d="M6 40h15" />
+                <path d="M59 40h15" />
+                <path d="m15.6 15.6 10.6 10.6" />
+                <path d="m53.8 53.8 10.6 10.6" />
+                <path d="m64.4 15.6-10.6 10.6" />
+                <path d="m26.2 53.8-10.6 10.6" />
+              </g>
+            </svg>
+
             <svg class="how__doodle how__doodle--heart" viewBox="0 0 72 66" aria-hidden="true">
               <path
                 d="M36 60C22 51 6 38 6 22.5 6 12.5 13 6 21.5 6c5.3 0 10.1 2.8 12.4 7 2.4-4.2 7.2-7 12.5-7C55 6 62 12.5 62 22.5 62 38 46 51 36 60z"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.6"
+                stroke-width="2.8"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
-            </svg>
-
-            <svg class="how__doodle how__doodle--burst" viewBox="0 0 80 80" aria-hidden="true">
-              <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none">
-                <path d="M40 6v13" />
-                <path d="M40 61v13" />
-                <path d="M6 40h13" />
-                <path d="M61 40h13" />
-                <path d="m15.6 15.6 9.2 9.2" />
-                <path d="m55.2 55.2 9.2 9.2" />
-                <path d="m64.4 15.6-9.2 9.2" />
-                <path d="m24.8 55.2-9.2 9.2" />
-              </g>
             </svg>
 
             <svg class="how__doodle how__doodle--star" viewBox="0 0 44 44" aria-hidden="true">
@@ -384,14 +328,14 @@
                 d="m22 4 5.4 11.2L40 17.4 29.9 26.3l2.5 12.3L22 32.6l-10.4 6 2.5-12.3L4 17.4l12.6-2.2z"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2.2"
+                stroke-width="2.4"
                 stroke-linejoin="round"
               />
             </svg>
           </div>
 
           <div class="how__content">
-            <p class="tag tag--soft">How it works</p>
+            <p class="tag tag--blush">How it works</p>
             <h2 class="section-title" id="how-title">It's simple. Just 4 steps.</h2>
             <p class="section-text">
               Create a beautiful event, share the link and let your people show up with love.
@@ -413,34 +357,29 @@
     <!-- ============================================================= -->
     <footer class="site-footer">
       <div class="container site-footer__inner">
-        <div class="site-footer__brand">
-          <a class="brand brand--footer" href="#top" aria-label="Wishmarsh home">
-            <span class="brand__mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.5 10.2 16 2.8l12.5 7.4v14.6a2 2 0 0 1-2 2h-21a2 2 0 0 1-2-2z"
-                  stroke="currentColor"
-                  stroke-width="2.1"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M3.5 10.2 16 18.6l12.5-8.4"
-                  stroke="currentColor"
-                  stroke-width="2.1"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M16 23.4s-4.3-2.6-4.3-5.3a2.35 2.35 0 0 1 4.3-1.4 2.35 2.35 0 0 1 4.3 1.4c0 2.7-4.3 5.3-4.3 5.3z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <span class="brand__text">Wishmarsh</span>
-          </a>
-          <p class="site-footer__tagline">
-            Beautiful wish walls for the people you care about.
-          </p>
-        </div>
+        <a class="brand brand--footer" href="#top" aria-label="Wishmarsh home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M3.5 10.2 16 2.8l12.5 7.4v14.6a2 2 0 0 1-2 2h-21a2 2 0 0 1-2-2z"
+                stroke="currentColor"
+                stroke-width="2.1"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M3.5 10.2 16 18.6l12.5-8.4"
+                stroke="currentColor"
+                stroke-width="2.1"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 23.4s-4.3-2.6-4.3-5.3a2.35 2.35 0 0 1 4.3-1.4 2.35 2.35 0 0 1 4.3 1.4c0 2.7-4.3 5.3-4.3 5.3z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span class="brand__text">Wishmarsh</span>
+        </a>
 
         <nav class="site-footer__links" aria-label="Footer">
           <a href="#terms">Terms</a>
@@ -489,7 +428,6 @@
 
       <div class="container site-footer__bottom">
         <p>&copy; <span data-year>2026</span> Wishmarsh. All rights reserved.</p>
-        <p>Made with love for celebrations everywhere.</p>
       </div>
     </footer>
 
@@ -543,7 +481,7 @@
           </div>
 
           <div class="modal__actions">
-            <button class="btn btn--wine auth-form__submit" type="submit">
+            <button class="btn btn--maroon auth-form__submit" type="submit">
               <span>Log in</span>
             </button>
           </div>

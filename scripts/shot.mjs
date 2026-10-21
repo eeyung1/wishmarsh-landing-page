@@ -12,7 +12,7 @@ const URL = process.argv[4] ?? "http://localhost:4173/index.html";
 const OUT = process.argv[5] ?? "/tmp/opencode/shot.png";
 const FULL = (process.argv[6] ?? "full") === "full";
 const ACTION = process.argv[7] ?? "";
-const PORT = 9334;
+const PORT = 9400 + Math.floor(Math.random() * 500);
 const PROFILE = `/tmp/opencode/chrome-profile-${PORT}`;
 rmSync(PROFILE, { recursive: true, force: true });
 
@@ -33,8 +33,8 @@ const chrome = spawn(
 process.on("exit", () => chrome.kill());
 
 let target = null;
-for (let attempt = 0; attempt < 40 && !target; attempt += 1) {
-  await sleep(250);
+for (let attempt = 0; attempt < 120 && !target; attempt += 1) {
+  await sleep(500);
   try {
     const res = await fetch(`http://127.0.0.1:${PORT}/json/list`);
     const list = await res.json();
