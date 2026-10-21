@@ -49,37 +49,69 @@
     {
       id: "wish_tunde",
       author: "Tunde",
-      message: "Happy Birthday \u2013 Tunde! \u2661",
+      message: "Happy Birthday\n\u2013 Tunde! \u2661",
       noteColor: "pink",
-      rotationDeg: -6
-    },
-    {
-      id: "wish_vibes",
-      author: "",
-      message: "Good Vibes Only! \u2661",
-      noteColor: "yellow",
-      rotationDeg: 4
-    },
-    {
-      id: "wish_mama",
-      author: "Mama",
-      message: "God's favour always... \u2013 Mama \u2661",
-      noteColor: "dark",
-      rotationDeg: -3
+      rotationDeg: -7
     },
     {
       id: "wish_femi",
       author: "Femi",
-      message: "You are loved!",
-      noteColor: "white",
-      rotationDeg: 7
+      message: "More blessings\n\u2013 Femi",
+      noteColor: "pink",
+      rotationDeg: -4
+    },
+    {
+      id: "wish_vibes",
+      author: "",
+      message: "Good Vibes\nOnly! \u2661",
+      noteColor: "yellow",
+      rotationDeg: -2
     },
     {
       id: "wish_cousin",
       author: "Your cousin",
-      message: "Huge congratulations!",
+      message: "So proud\nof you!\n\u2013 Your cousin",
       noteColor: "white",
       rotationDeg: -8
+    },
+    {
+      id: "wish_mama",
+      author: "Mama",
+      message: "God's favour\nalways...\n\u2013 Mama \u2661",
+      noteColor: "dark",
+      rotationDeg: -5
+    },
+    {
+      id: "wish_photo_1",
+      author: "",
+      message: "",
+      photoUrl: "images/guy.jpg",
+      noteColor: "white",
+      rotationDeg: 4
+    },
+    {
+      id: "wish_photo_2",
+      author: "",
+      message: "",
+      photoUrl: "images/girl.jpg",
+      noteColor: "white",
+      rotationDeg: -7
+    },
+    {
+      id: "wish_photo_3",
+      author: "",
+      message: "",
+      photoUrl: "images/guy.jpg",
+      noteColor: "white",
+      rotationDeg: 5
+    },
+    {
+      id: "wish_photo_4",
+      author: "",
+      message: "",
+      photoUrl: "images/girl.jpg",
+      noteColor: "white",
+      rotationDeg: -4
     }
   ];
   var REQUEST_TIMEOUT_MS = 6e3;
@@ -397,11 +429,12 @@
     const notesOnly = [];
     const photos = [];
     for (const note of notes) {
-      const isPhoto = note.noteColor === "white";
+      const isPhoto = Boolean(note.photoUrl);
       if (isPhoto) {
         photos.push({
           id: note.id,
           author: note.author,
+          ...note.photoUrl ? { src: note.photoUrl } : {},
           rotation: note.rotationDeg,
           hue: hashString(note.id) % 360
         });
@@ -413,7 +446,7 @@
   }
   function renderNotes(container, notes) {
     container.innerHTML = notes.map((note, index) => {
-      const position = `note--${index % 3 + 1}`;
+      const position = `note--${index % 5 + 1}`;
       const showAuthor = note.author.length > 0 && !note.message.toLowerCase().includes(note.author.toLowerCase());
       return `
       <article class="note note--${note.color} ${position}" data-reveal
@@ -426,12 +459,12 @@
   }
   function renderPhotos(container, photos) {
     container.innerHTML = photos.map((photo, index) => {
-      const position = `polaroid--${index % 2 + 1}`;
+      const position = `polaroid--${index % 4 + 1}`;
+      const image = photo.src ? `<img src="${escapeHtml(photo.src)}" alt="A memory shared on the Wishmarsh wall" width="240" height="180" loading="lazy" decoding="async" />` : avatarSvg(photo.author || "Wishmarsh", photo.hue);
       return `
       <figure class="polaroid ${position}" data-reveal
         style="--rotation:${photo.rotation}deg; --reveal-delay:${index * 100}ms">
-        <div class="polaroid__img">${avatarSvg(photo.author, photo.hue)}</div>
-        <figcaption class="polaroid__caption">\u2013 ${escapeHtml(photo.author)}</figcaption>
+        <div class="polaroid__img">${image}</div>
       </figure>`;
     }).join("");
   }

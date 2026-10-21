@@ -63,6 +63,7 @@ export interface WishWallNote {
 export interface WishWallPhoto {
   id: string;
   author: string;
+  src?: string;
   rotation: number;
   hue: number;
 }
@@ -278,11 +279,12 @@ function partitionWishes(notes: WishNote[]): {
   const photos: WishWallPhoto[] = [];
 
   for (const note of notes) {
-    const isPhoto = note.noteColor === "white";
+    const isPhoto = Boolean(note.photoUrl);
     if (isPhoto) {
       photos.push({
         id: note.id,
         author: note.author,
+        ...(note.photoUrl ? { src: note.photoUrl } : {}),
         rotation: note.rotationDeg,
         hue: hashString(note.id) % 360,
       });
@@ -297,7 +299,7 @@ function partitionWishes(notes: WishNote[]): {
 function renderNotes(container: HTMLElement, notes: WishWallNote[]): void {
   container.innerHTML = notes
     .map((note, index) => {
-      const position = `note--${(index % 3) + 1}`;
+      const position = `note--${(index % 5) + 1}`;
       // Only show a separate byline when the message does not already name the author.
       const showAuthor =
         note.author.length > 0 &&
@@ -317,12 +319,15 @@ function renderNotes(container: HTMLElement, notes: WishWallNote[]): void {
 function renderPhotos(container: HTMLElement, photos: WishWallPhoto[]): void {
   container.innerHTML = photos
     .map((photo, index) => {
-      const position = `polaroid--${(index % 2) + 1}`;
+      const position = `polaroid--${(index % 4) + 1}`;
+      const image = photo.src
+        ? `<img src="${escapeHtml(photo.src)}" alt="A memory shared on the Wishmarsh wall" width="240" height="180" loading="lazy" decoding="async" />`
+        : avatarSvg(photo.author || "Wishmarsh", photo.hue);
+
       return `
       <figure class="polaroid ${position}" data-reveal
         style="--rotation:${photo.rotation}deg; --reveal-delay:${index * 100}ms">
-        <div class="polaroid__img">${avatarSvg(photo.author, photo.hue)}</div>
-        <figcaption class="polaroid__caption">– ${escapeHtml(photo.author)}</figcaption>
+        <div class="polaroid__img">${image}</div>
       </figure>`;
     })
     .join("");

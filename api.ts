@@ -42,6 +42,8 @@ export interface WishNote {
   message: string;
   /** Optional remote avatar; falls back to an inline SVG placeholder. */
   avatarUrl?: string;
+  /** When set, the card is rendered as a polaroid photo instead of a note. */
+  photoUrl?: string;
   noteColor: "pink" | "yellow" | "dark" | "white";
   rotationDeg: number;
 }
@@ -128,37 +130,69 @@ export const MOCK_WISHES: WishNote[] = [
   {
     id: "wish_tunde",
     author: "Tunde",
-    message: "Happy Birthday – Tunde! ♡",
+    message: "Happy Birthday\n– Tunde! ♡",
     noteColor: "pink",
-    rotationDeg: -6,
-  },
-  {
-    id: "wish_vibes",
-    author: "",
-    message: "Good Vibes Only! ♡",
-    noteColor: "yellow",
-    rotationDeg: 4,
-  },
-  {
-    id: "wish_mama",
-    author: "Mama",
-    message: "God's favour always... – Mama ♡",
-    noteColor: "dark",
-    rotationDeg: -3,
+    rotationDeg: -7,
   },
   {
     id: "wish_femi",
     author: "Femi",
-    message: "You are loved!",
-    noteColor: "white",
-    rotationDeg: 7,
+    message: "More blessings\n– Femi",
+    noteColor: "pink",
+    rotationDeg: -4,
+  },
+  {
+    id: "wish_vibes",
+    author: "",
+    message: "Good Vibes\nOnly! ♡",
+    noteColor: "yellow",
+    rotationDeg: -2,
   },
   {
     id: "wish_cousin",
     author: "Your cousin",
-    message: "Huge congratulations!",
+    message: "So proud\nof you!\n– Your cousin",
     noteColor: "white",
     rotationDeg: -8,
+  },
+  {
+    id: "wish_mama",
+    author: "Mama",
+    message: "God's favour\nalways...\n– Mama ♡",
+    noteColor: "dark",
+    rotationDeg: -5,
+  },
+  {
+    id: "wish_photo_1",
+    author: "",
+    message: "",
+    photoUrl: "images/guy.jpg",
+    noteColor: "white",
+    rotationDeg: 4,
+  },
+  {
+    id: "wish_photo_2",
+    author: "",
+    message: "",
+    photoUrl: "images/girl.jpg",
+    noteColor: "white",
+    rotationDeg: -7,
+  },
+  {
+    id: "wish_photo_3",
+    author: "",
+    message: "",
+    photoUrl: "images/guy.jpg",
+    noteColor: "white",
+    rotationDeg: 5,
+  },
+  {
+    id: "wish_photo_4",
+    author: "",
+    message: "",
+    photoUrl: "images/girl.jpg",
+    noteColor: "white",
+    rotationDeg: -4,
   },
 ];
 
